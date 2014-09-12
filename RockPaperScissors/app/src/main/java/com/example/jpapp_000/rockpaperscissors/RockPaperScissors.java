@@ -14,7 +14,8 @@ import android.widget.ImageView;
 import android.view.MenuItem;
 
 
-public abstract class RockPaperScissors extends Activity implements DialogInterface.OnClickListener {
+public abstract class RockPaperScissors extends Activity implements DialogInterface.OnClickListener, View.OnClickListener {
+
 
     public enum Choice{
         ROCK, PAPER, SCISSORS
@@ -24,6 +25,21 @@ public abstract class RockPaperScissors extends Activity implements DialogInterf
         WIN, LOSE, DRAW
     }
 
+    private Choice userSelection;
+    private Result gameResult;
+
+
+    @Override
+    public void onClick(View v) {
+
+        ImageView imageView = (ImageView) findViewById(R.id.imageViewMe);
+        boolean game = true;
+
+
+    }
+
+
+
 
 
     @Override
@@ -32,7 +48,13 @@ public abstract class RockPaperScissors extends Activity implements DialogInterf
         setContentView(R.layout.activity_rock_paper_scissors);
 
         Button buttonRock = (Button) findViewById(R.id.buttonRock);
-        
+        Button buttonPaper = (Button) findViewById(R.id.buttonPaper);
+        Button buttonScissors = (Button) findViewById(R.id.buttonScissors);
+
+        buttonPaper.setOnClickListener(this);
+        buttonRock.setOnClickListener(this);
+        buttonScissors.setOnClickListener(this);
+
     }
 
 
