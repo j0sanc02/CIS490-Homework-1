@@ -35,12 +35,58 @@ public abstract class RockPaperScissors extends Activity implements DialogInterf
         ImageView imageView = (ImageView) findViewById(R.id.imageViewMe);
         boolean game = true;
 
+        switch (v.getId()){
+            case R.id.buttonPaper:
+                userSelection = Choice.PAPER;
+                imageView.setImageResource(R.drawable.paper);
+                break;
+            case R.id.buttonRock:
+                userSelection = Choice.ROCK;
+                imageView.setImageResource(R.drawable.rock);
+                break;
+            case R.id.buttonScissors:
+                userSelection = Choice.SCISSORS;
+                imageView.setImageResource(R.drawable.scissors);
+                break;
 
+        }
+
+        if(game){
+            game();
+            showResults();
+        }
     }
 
 
 
 
+    private void showResults(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(RockPaperScissors.this);
+        builder.setCancelable(false);
+        builder.setPositiveButton("OK!",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which){
+
+            }
+        });
+
+        if(gameResult == Result.LOSE) {
+            builder.setMessage("Loser!!!");
+        } else if(gameResult==Result.WIN){
+            builder.setMessage("Win!");
+        } else if (gameResult==Result.DRAW){
+            builder.setMessage("Draw!!");
+        }
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    private void game ()
+    {
+
+
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
