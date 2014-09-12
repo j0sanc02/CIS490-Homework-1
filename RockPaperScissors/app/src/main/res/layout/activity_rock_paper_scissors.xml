@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".RockPaperScissors">
+
+    <TextView
+        android:text="@string/RockPaperScissors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rock"
+        android:id="@+id/buttonRock"
+        android:src="@drawable/rock"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="57dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scissors"
+        android:id="@+id/buttonScissors"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/buttonRock" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paper"
+        android:id="@+id/buttonPaper"
+        android:layout_alignTop="@+id/buttonScissors"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewMe"
+        android:src="@drawable/fist"
+        android:layout_toEndOf="@+id/buttonRock"
+        android:layout_toRightOf="@+id/buttonRock"
+        android:layout_toStartOf="@+id/buttonPaper"
+        android:layout_below="@+id/textView2"
+        android:layout_toLeftOf="@+id/buttonPaper" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewComp"
+        android:src="@drawable/fist"
+        android:layout_toEndOf="@+id/buttonPaper"
+        android:layout_toStartOf="@+id/buttonScissors"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/buttonPaper"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/buttonScissors" />
+
+
+</RelativeLayout>
