@@ -17,7 +17,7 @@ import android.view.MenuItem;
 public abstract class RockPaperScissors extends Activity implements DialogInterface.OnClickListener, View.OnClickListener {
 
 
-    public enum Choice {
+    public enum Choice{
         ROCK, PAPER, SCISSORS
     }
 
@@ -35,7 +35,7 @@ public abstract class RockPaperScissors extends Activity implements DialogInterf
         ImageView imageView = (ImageView) findViewById(R.id.imageViewMe);
         boolean game = true;
 
-        switch (v.getId()) {
+        switch (v.getId()){
             case R.id.buttonPaper:
                 userSelection = Choice.PAPER;
                 imageView.setImageResource(R.drawable.paper);
@@ -51,70 +51,42 @@ public abstract class RockPaperScissors extends Activity implements DialogInterf
 
         }
 
-        if (game) {
+        if(game){
             game();
             showResults();
         }
     }
 
 
-    private void showResults() {
+
+
+    private void showResults(){
         AlertDialog.Builder builder = new AlertDialog.Builder(RockPaperScissors.this);
         builder.setCancelable(false);
-        builder.setPositiveButton("OK!", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("OK!",new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(DialogInterface dialog, int which){
 
             }
         });
 
-        if (gameResult == Result.LOSE) {
+        if(gameResult == Result.LOSE) {
             builder.setMessage("Loser!!!");
-        } else if (gameResult == Result.WIN) {
+        } else if(gameResult==Result.WIN){
             builder.setMessage("Win!");
-        } else if (gameResult == Result.DRAW) {
+        } else if (gameResult==Result.DRAW){
             builder.setMessage("Draw!!");
         }
         AlertDialog alert = builder.create();
         alert.show();
     }
 
-    private void game() {
-        int compRandom = ((int) (Math.random() * 10)) % 3;
-        Choice compChoice = null;
-        ImageView imageView = (ImageView) findViewById(R.id.imageViewComp);
+    private void game ()
+    {
 
-        switch (compRandom) {
-            case 0:
-                compChoice = Choice.PAPER;
-                imageView.setImageResource(R.drawable.paper);
-                break;
-            case 1:
-                compChoice = Choice.SCISSORS;
-                imageView.setImageResource(R.drawable.scissors);
-                break;
-            case 2:
-                compChoice = Choice.ROCK;
-                imageView.setImageResource(R.drawable.rock);
-                break;
-        }
-
-        if (compChoice == userSelection) {
-            gameResult = Result.DRAW;
-        } else if (compChoice == Choice.PAPER && userSelection == Choice.ROCK) {
-            gameResult = Result.LOSE;
-        } else if (compChoice == Choice.SCISSORS && userSelection == Choice.PAPER) {
-            gameResult = Result.LOSE;
-        } else if (compChoice == Choice.ROCK && userSelection == Choice.SCISSORS) {
-            gameResult = Result.LOSE;
-        } else {
-            gameResult = Result.WIN;
-        }
 
 
     }
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
