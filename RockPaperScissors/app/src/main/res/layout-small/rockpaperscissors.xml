@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ring">
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageView3"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/bell"
+        android:layout_alignLeft="@+id/buttonScissors" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageViewComp"
+        android:src="@drawable/fist"
+        android:layout_gravity="right"
+        android:layout_alignTop="@+id/imageViewMe"
+        android:layout_toRightOf="@+id/buttonPaper" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageViewMe"
+        android:src="@drawable/fist"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/buttonRock" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:height="100dp"
+        android:width="25dp"
+        android:text="Rock"
+        android:id="@+id/buttonRock"
+        android:background="#807f80"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/buttonPaper" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:height="100dp"
+        android:width="25dp"
+        android:text="Paper"
+        android:id="@+id/buttonPaper"
+        android:background="#807f80"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:height="100dp"
+        android:width="25dp"
+        android:text="Scissors"
+        android:id="@+id/buttonScissors"
+        android:background="#807f80"
+        android:layout_alignTop="@+id/buttonPaper"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right" />
+
+
+</RelativeLayout>
